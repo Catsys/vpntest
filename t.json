@@ -1,4 +1,15 @@
 {
+	"dns": {
+		"servers": [
+			{
+				"tag": "dns-cf",
+				"address": "https://1.1.1.1/dns-query",
+				"address_strategy": "prefer_ipv4",
+				"strategy": "prefer_ipv4",
+				"detour": "shadowsocks-out"
+			}
+		]
+	},
 	"log": {
 		"level": "trace"
 	},
@@ -31,17 +42,17 @@
 			"server": "79.98.31.29",
             "server_port": 28371,
             "method": "2022-blake3-aes-256-gcm",
-            "password": "DJnsLVE1ypmoEoRQQxKCiAcO4hkgTG4zqooOIWNkA14=:zc4A/Ib422N99/Gi/ikZEh2qUMoUGjOiGYwH5jHbVyg="
+            "password": "DJnsLVE1ypmoEoRQQxKCiAcO4hkgTG4zqooOIWNkA14=:ZejCSN8Um7z3dwB6Aqym3NwbzdkW9kmCDOBL0VgucAs="
 		},
 		{
 			"type": "dns",
-			"tag": "dns-out"
+			"tag": "dns-cf"
 		}
 	],
 	"route": {
 		"rules": [{
 				"protocol": "dns",
-				"outbound": "dns-out"
+				"outbound": "dns-cf"
 			}
 		],
 		"final": "shadowsocks-out",
